@@ -10,5 +10,9 @@ app.use( logger( "dev" ) )
 app.use( body_parser.json() )
 app.use( body_parser.urlencoded( { extended: false } ) )
 
+app.get( '/', function( req, res ) {
+	res.send( "Hello!" )
+})
+
 app.listen( port )
 console.log( "Server on", port )
