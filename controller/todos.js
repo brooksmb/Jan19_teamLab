@@ -3,7 +3,7 @@ var Todo = require( '../models/todo' )
 function index( req, res ) {
 	Todo.find( function( error, todos ) {
 		if ( error ) res.json( { message: "Could not find todos" } )
-		res.json( todos )
+		res.json( { todos: todos } )
 	})
 }
 
@@ -25,7 +25,7 @@ function getTodo( req, res ) {
 
 	Todo.findById( { _id: id }, function( error, todo ) {
 		if ( error ) res.json( { message: "Could not find Todo" } )
-		res.json( { todo: todo } )
+		res.render( { todo: todo } )
 	} )
 }
 
@@ -42,7 +42,8 @@ function updateTodo( req, res ) {
 		Todo.save( function ( error ) {
 			if ( error ) res.json( { message: "Todo could not be updated!" } )
 			res.json( { message: "Todo created!" } )
-		})	
+		})
+	})	
 }
 
 function deleteTodo( req, res ) {
