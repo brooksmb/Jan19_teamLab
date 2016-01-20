@@ -21,7 +21,7 @@ function createTodo( req, res ) {
 
 function getTodo( req, res ) {
 
-	var banana = req.params.id
+	var id = req.params.id
 
 	Todo.findById( { _id: id }, function( error, todo ) {
 		if ( error ) res.json( { message: "Could not find Todo" } )
