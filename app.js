@@ -5,9 +5,12 @@ var express 	= require( 'express' ),
 	body_parser = require( 'body-parser' ),
 	mongoose	= require( 'mongoose' ),
 	port 		= process.env.PORT || 3000,
-	routes		= require( './routes/routes' )
+	routes		= require( './routes/routes' ),
+	var mongoUri =  process.env.MONGOLAB_URI || 'mongodb://localhost/todo_lab';
 
-mongoose.connect( 'mongodb://localhost:27017/team_lab' )
+
+moongoose.connect(mongoUri);
+
 
 app.use( logger( "dev" ) )
 app.use( body_parser.json() )
@@ -21,5 +24,5 @@ app.set( "view engine", "ejs" )
 app.use( '/todos', routes )
 
 
-app.listen( port )
+app.listen(process.env.PORT || 3000 )
 console.log( "Server on", port )
