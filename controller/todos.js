@@ -15,7 +15,7 @@ function createTodo( req, res ) {
 
 	todo.save( function( error ) {
 		if ( error ) res.json( { message: "Todo could not be created!" } )
-		res.redirect( '/' )
+		res.redirect( '/todos' )
 	})
 }
 
