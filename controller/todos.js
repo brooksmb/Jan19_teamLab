@@ -12,7 +12,7 @@ function createTodo( req, res ) {
 	var todo = new Todo()
 		todo.title = req.body.title
 		todo.content = req.body.content
-	
+
 	todo.save( function( error ) {
 		if ( error ) res.json( { message: "Todo could not be created!" } )
 		res.redirect( '/' )
@@ -43,7 +43,7 @@ function updateTodo( req, res ) {
 			if ( error ) res.json( { message: "Todo could not be updated!" } )
 			res.json( { message: "Todo created!" } )
 		})
-	})	
+	})
 }
 
 function deleteTodo( req, res ) {
@@ -63,11 +63,3 @@ module.exports = {
 	updateTodo: updateTodo,
 	deleteTodo: deleteTodo
 }
-		
-
-
-
-
-
-
-

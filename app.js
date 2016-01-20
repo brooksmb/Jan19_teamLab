@@ -6,10 +6,10 @@ var express 	= require( 'express' ),
 	mongoose	= require( 'mongoose' ),
 	port 		= process.env.PORT || 3000,
 	routes		= require( './routes/routes' ),
-	var mongoUri =  process.env.MONGOLAB_URI || 'mongodb://localhost/todo_lab';
+	mongoUri =  process.env.MONGOLAB_URI || 'mongodb://localhost/todo_lab';
 
 
-moongoose.connect(mongoUri);
+mongoose.connect(mongoUri);
 
 
 app.use( logger( "dev" ) )
